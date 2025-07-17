@@ -16,7 +16,7 @@ echo "BEGIN: Preprocessing................."
 ################################################################                                                                                                                      
 ##Load required modules 
 ################################################################
-## Activate these commands only if needed
+## Activate these modules only if needed
 ##module load fastqc/0.11.5
 ##module load trimmomatic/0.36
 ##module load java/1.8.0_101
