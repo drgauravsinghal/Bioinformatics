@@ -29,9 +29,11 @@ qc=${wd}/qc
 trim=${wd}/trim
 fastq=/home/ubuntu/PracticeAnalysis/rawdata/
 
+################################################################
 #make folders that do not exist
-mkdir -p ${qc} ${trim} 
-mkdir -p /home/ubuntu/PracticeAnalysis/eofiles
+mkdir -p ${qc} ${trim} ${eofiles}
+################################################################
+
 ################################################################
 ##Job information
 ################################################################
@@ -42,7 +44,6 @@ printf "\nRun on: $(hostname)"
 printf "\nRun from: $(pwd)"
 printf "\nScript: $0\n"
 date
-
 ##printf "\nYou have requested $SLURM_CPUS_ON_NODE core(s).\n" ##Activate this command when using SLURM
 
 ################################################################
