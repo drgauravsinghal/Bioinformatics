@@ -1,14 +1,14 @@
 #!/bin/bash                              
-#SBATCH --job-name=fastqc+trim                               # Job name
-#SBATCH --mail-type=ALL                                      # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=drgauravsinghal@gmail.com                # Where to send mail
-#SBATCH --nodes=1                                            # Numbers of nodes
-#SBATCH --ntasks=1                                           # Number of tasks
-#SBATCH --cpus-per-task=2                                    # Number CPU
-#SBATCH --time=00:30:00 # Time limit                         # Time limit hrs:min:sec
-#SBATCH --partition=short                                  # Partition/queue requested on server
-#SBATCH --mem=500mb                                          # Memory limit
-#SBATCH --output=/home/ubuntu/PracticeAnalysis/eofiles/%x_%j.out # Where to save out files             
+#SBATCH --job-name=fastqc+trim                                   # Job name
+#SBATCH --mail-type=ALL                                          # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=drgauravsinghal@gmail.com                    # Where to send mail
+#SBATCH --nodes=1                                                # Numbers of nodes
+#SBATCH --ntasks=1                                               # Number of tasks
+#SBATCH --cpus-per-task=2                                        # Number CPU
+#SBATCH --time=00:30:00 # Time limit                             # Time limit hrs:min:sec
+#SBATCH --partition=short                                        # Partition/queue requested on server
+#SBATCH --mem=500mb                                              # Memory limit
+#SBATCH --output=/home/ubuntu/PracticeAnalysis/eofiles/%x_%j.out # Where to save out files           
 #SBATCH --error=/home/ubuntu/PracticeAnalysis/eofiles/%x_%j.err  # Where to save error files
 
 echo "BEGIN: Preprocessing................."
@@ -52,8 +52,6 @@ date
 mkdir -p ${qc}/trim_log
 mkdir -p ${qc}/fastqc
 
-#here were are using loops 
-#CHALLENGE: what do these commands do (ls, tr, cut)? 
 for sample in `ls ${fastq} | tr '.' '\t' | cut -f 1`; 
 do
     #1: trim fastq file using trimmomatic
@@ -78,7 +76,6 @@ java -jar /home/ubuntu/Tools/Trimmomatic-0.39/trimmomatic-0.39.jar SE \
     ##AVGQUAL:20 ##discards reads with average quality below a threshold, only for strict filtering 
 
     #2: check quality of the fastq files after trimming 
-    #CHALLENGE: Compare them to the raw input 
     fastqc --threads=2 ${trim}/${sample}.trimmed.fastq.gz -o ${qc}/fastqc
 
 done
