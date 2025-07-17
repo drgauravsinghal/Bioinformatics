@@ -24,10 +24,10 @@ echo "BEGIN: Preprocessing................."
 ################################################################
 ##Initialize folders 
 ################################################################
-wd=/home/ubuntu/PracticeAnalysis/
+wd=/home/ubuntu/PracticeAnalysis/ ##correct the path as necessary
 qc=${wd}/qc
 trim=${wd}/trim
-fastq=/home/ubuntu/PracticeAnalysis/rawdata/
+fastq=/home/ubuntu/PracticeAnalysis/rawdata/ ##correct the path as necessary
 
 ################################################################
 #make folders that may not exist
@@ -56,13 +56,13 @@ mkdir -p ${qc}/fastqc
 for sample in `ls ${fastq} | tr '.' '\t' | cut -f 1`; 
 do
     #1: trim fastq file using trimmomatic
-java -jar /home/ubuntu/Tools/Trimmomatic-0.39/trimmomatic-0.39.jar SE \
+java -jar /home/ubuntu/Tools/Trimmomatic-0.39/trimmomatic-0.39.jar SE \ ##correct the path as necessary
     -threads 2 \
     -phred33 \
     -trimlog ${qc}/trim_log/${sample}.trimlog \
     ${fastq}/${sample}.fastq.gz \
     ${trim}/${sample}.trimmed.fastq.gz \
-    ILLUMINACLIP:/home/ubuntu/Tools/Trimmomatic-0.39/adapters/TruSeq3-SE.fa:2:30:10 \
+    ILLUMINACLIP:/home/ubuntu/Tools/Trimmomatic-0.39/adapters/TruSeq3-SE.fa:2:30:10 \ ##correct the path as necessary
     LEADING:3 \
     TRAILING:3 \
     SLIDINGWINDOW:4:15 \
@@ -80,6 +80,6 @@ java -jar /home/ubuntu/Tools/Trimmomatic-0.39/trimmomatic-0.39.jar SE \
     fastqc --threads=2 ${trim}/${sample}.trimmed.fastq.gz -o ${qc}/fastqc
 
 done
-exec > /home/ubuntu/PracticeAnalysis/eofiles/run.out 2> /home/ubuntu/PracticeAnalysis/eofiles/run.err  ## Deactivate this command when using SLURM
+exec > /home/ubuntu/PracticeAnalysis/eofiles/run.out 2> /home/ubuntu/PracticeAnalysis/eofiles/run.err  ## Deactivate this command when using SLURM, correct the path as necessary
 echo "DONE: Preprocessing................."
 echo Job finished at `date +"%T %a %d %b %Y"`
