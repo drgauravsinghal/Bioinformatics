@@ -69,7 +69,7 @@ java -jar /home/ubuntu/Tools/Trimmomatic-0.39/trimmomatic-0.39.jar SE \
     SLIDINGWINDOW:4:15 \
     MINLEN:36
 
-    ##Activate/Modify these commands only for low quality data else it will be unwanted trimming
+    ##Activate/Modify these commands only for low quality data else this will be an unwanted trimming
     ##SLIDINGWINDOW:4:20
     ##LEADING:5
     ##TRAILING:5
