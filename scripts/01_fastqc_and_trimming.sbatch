@@ -30,7 +30,7 @@ trim=${wd}/trim
 fastq=/home/ubuntu/PracticeAnalysis/rawdata/
 
 ################################################################
-#make folders that do not exist
+#make folders that may not exist
 mkdir -p ${qc} ${trim} ${eofiles}
 ################################################################
 
