@@ -1,0 +1,11 @@
+Host gs
+    HostName 18.116.203.59
+    User ubuntu
+    IdentityFile ~/.ssh/gs-aws-key.pem
+    IdentitiesOnly yes
+
+Host dgs
+    HostName 13.58.16.233
+    User drgauravsinghal
+    IdentitiesOnly yes
+
