@@ -1,0 +1,8 @@
+## Updating the ~/.ssh/config profile will make the ssh login simpler. E.g., ssh gauravsinghal@<ip address> to ssh gs 
+Host gs
+    HostName <ip address>
+    User <ssh username>            ##e.g., gauravsinghal
+    IdentityFile ~/.ssh/gs-aws-key.pem            ## if .pem key is generated on the AWS server, else deactivate the command
+    IdentitiesOnly yes
+
+
