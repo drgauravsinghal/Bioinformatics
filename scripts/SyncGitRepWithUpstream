@@ -1,0 +1,6 @@
+cd ~/srworkshop                  # Enter your project directory. E.g. srworkshop
+git fetch upstream               # Get latest changes from upstream repo
+git checkout main                # Make sure you're on your main branch
+git merge upstream/main          # Merge upstream changes into your branch
+git push origin main             # Push updates to your own fork
+
