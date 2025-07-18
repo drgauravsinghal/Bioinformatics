@@ -1,11 +1,8 @@
+## Update the ~/.ssh/config profile with the below commands to make the ssh login simpler. E.g., ssh gauravsinghal@<ip address> to ssh gs 
 Host gs
-    HostName 18.116.203.59
-    User ubuntu
-    IdentityFile ~/.ssh/gs-aws-key.pem
+    HostName <ip address>
+    User <ssh username> ##e.g., gauravsinghal
+    IdentityFile ~/.ssh/gs-aws-key.pem ## if .pem key is generated on the AWS, else deactivate the command
     IdentitiesOnly yes
 
-Host dgs
-    HostName 13.58.16.233
-    User drgauravsinghal
-    IdentitiesOnly yes
 
